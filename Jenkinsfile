@@ -10,9 +10,12 @@ pipeline {
     }
     stages {
         stage('Build') {
+              environment {
+                     HOME = "."
+            }
             steps {
                 sh 'ls'
-                sh 'sudo npm install'
+                sh 'npm install'
             }
         }
         stage('Test') {
