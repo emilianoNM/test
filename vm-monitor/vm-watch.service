@@ -1,0 +1,11 @@
+[Unit]
+Description=Servicio de monitoreo de VMs
+After=network.target vboxdrv.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/vm_watch.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
