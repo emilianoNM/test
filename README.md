@@ -15,9 +15,10 @@ the "Test" and "Deliver" stages of your Pipeline.
 
 ## VM Monitor Script
 
-This repository also contains a small example for monitoring virtual machines on a Linux host.
-The files in `vm-monitor` provide a `vm_watch.sh` script and the corresponding systemd
-service and timer units.
+This repository also contains a small example for monitoring VirtualBox virtual
+machines on a Linux host. The files in `vm-monitor` provide a `vm_watch.sh`
+script (which uses `VBoxManage`) and the corresponding systemd service and timer
+units.
 
 1. Copy `vm-monitor/vm_watch.sh` to `/usr/local/bin/` and make it executable:
    ```bash
@@ -34,5 +35,6 @@ service and timer units.
    sudo systemctl enable --now vm-watch.timer
    ```
 
-With this setup the script checks a list of VMs every five minutes and starts any that
-are found powered off.
+Edit the `VMS` array inside `vm_watch.sh` with the names of your VirtualBox
+VMs. With this setup the script checks these VMs every five minutes and starts
+any that are found powered off.
