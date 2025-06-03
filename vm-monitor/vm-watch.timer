@@ -1,0 +1,9 @@
+[Unit]
+Description=Ejecucion periodica de vm-watch.service
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=5min
+
+[Install]
+WantedBy=timers.target
